@@ -24,6 +24,8 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     public static let BOOK_SOURCE_URL = 4
     public static let BOOK_SOURCE_RAW = 5
     
+    public let layout = UICollectionViewFlowLayout()
+    
     private static let START = "start"
     private static let END = "end"
     private static let CENTER = "center"
@@ -39,7 +41,6 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     private let gridItemHeight = Dimens.gridItemHeight
     private var shelfView: UICollectionView!
     private var trueGridItemWidth: Double!
-    private let layout = UICollectionViewFlowLayout()
     private let utils = Utils()
     public weak var delegate: ShelfViewDelegate!
     
@@ -94,7 +95,7 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
         
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: -7, left: 0, bottom: 0, right: 0)
         
         let sizeOfModel = bookModel.count
         var numberOfRows = sizeOfModel / numberOfTilesPerRow
