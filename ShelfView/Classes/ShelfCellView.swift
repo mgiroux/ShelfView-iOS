@@ -3,21 +3,23 @@
 //  ShelfView
 //
 //  Created by Adeyinka Adediji on 11/09/2017.
+//  Contributions: Marc Giroux 11/10.2017
 //  Copyright © 2017 Adeyinka Adediji. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ShelfCellView: UICollectionViewCell {
+public class ShelfCellView: UICollectionViewCell {
     
     public let bookCover = UIImageView()
+    
     let shelfBackground = UIImageView()
     let bookBackground = UIView()
     let indicator = UIActivityIndicatorView()
     let spine = UIImageView()
     
-    override  init(frame: CGRect) {
+    override init(frame: CGRect) {
         
         super.init(frame: frame)
         
@@ -42,7 +44,7 @@ class ShelfCellView: UICollectionViewCell {
     }   
     
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

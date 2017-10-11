@@ -3,6 +3,7 @@
 //  ShelfView
 //
 //  Created by Adeyinka Adediji on 11/09/2017.
+//  Contributions: Marc Giroux 11/10.2017
 //  Copyright © 2017 Adeyinka Adediji. All rights reserved.
 //
 
@@ -25,6 +26,7 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     public static let BOOK_SOURCE_RAW = 5
     
     public let layout = UICollectionViewFlowLayout()
+    public var shelfView: UICollectionView!
     
     private static let START = "start"
     private static let END = "end"
@@ -39,7 +41,6 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     private var shelfWidth: Int!
     private let gridItemWidth = Dimens.gridItemWidth
     private let gridItemHeight = Dimens.gridItemHeight
-    private var shelfView: UICollectionView!
     private var trueGridItemWidth: Double!
     private let utils = Utils()
     public weak var delegate: ShelfViewDelegate!
@@ -326,7 +327,7 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let position = indexPath.row
         if shelfModel[position].show {
-            delegate.onBookClicked(self, position: position, bookId: shelfModel[position].bookId, bookTitle: shelfModel[position].bookTitle)
+            delegate.onBookClicked(self, indexPath: indexPath, position: position, bookId: shelfModel[position].bookId, bookTitle: shelfModel[position].bookTitle)
         }
     }
     
