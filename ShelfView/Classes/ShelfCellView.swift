@@ -11,9 +11,9 @@ import UIKit
 
 class ShelfCellView: UICollectionViewCell {
     
+    public let bookCover = UIImageView()
     let shelfBackground = UIImageView()
     let bookBackground = UIView()
-    let bookCover = UIImageView()
     let indicator = UIActivityIndicatorView()
     let spine = UIImageView()
     
