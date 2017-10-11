@@ -223,7 +223,7 @@ public class ShelfView: UIView,UICollectionViewDelegate, UICollectionViewDataSou
         let bookCover = shelfItem.bookCoverSource.trim()
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShelfCellView", for: indexPath) as! ShelfCellView
-        cell.shelfBackground.frame = CGRect(x: 0, y: 0, width: trueGridItemWidth, height: Double(gridItemHeight))
+        cell.shelfBackground.frame = CGRect(x: 0, y: 0, width: trueGridItemWidth + 1, height: Double(gridItemHeight))
         cell.shelfBackground.contentMode = .scaleToFill
         
         switch shelfItem.type {
